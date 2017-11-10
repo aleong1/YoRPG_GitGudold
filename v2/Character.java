@@ -1,0 +1,34 @@
+/* Team GitGud - Alexia Leong, Alan Wang, Peter Cwalina
+   APCS1 pd2
+   HW 30 -- Ye Olde Role Playing Game, Improved
+   2017-11-10 */
+
+public class Character{
+    public int _HP;
+    public int _strength;
+    public int _defense;
+    public double _attack;
+
+    public boolean isAlive(){
+	//is living or dead
+	return _HP > 0;
+    }
+
+    public int getDefense(){
+	//returns value of defense
+	return _defense;
+    }
+
+    public void lowerHP(int a){
+	// decrease HP by a
+	_HP = _HP - a;
+    }
+
+    public int attack(Character m){
+	//calculates damage(int) with damage = (strength * attack rating) - monster defense
+	int damage =(int) (( _strength * _attack)- m.getDefense());
+	m.lowerHP(damage);
+	return damage;
+    }
+    
+}
